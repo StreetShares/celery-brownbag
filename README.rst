@@ -76,6 +76,7 @@ Parallel Safety
 Task Granularity
 -----------------
 too big - lose concurrency
+
 too small - not enough workers
 
 
