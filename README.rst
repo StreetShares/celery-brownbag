@@ -1,5 +1,14 @@
+=====================================
 Celery - Asynchronous Tasks in Python
 =====================================
+
+These are just quick notes we tried to cover while discussing Celery
+over a brownbag discussion at lunch. They only complement the points
+we were trying to get across. Reading through the links at the bottom will
+likely cover everythin.
+
+What is Celery
+--------------
 
 - Distributed
 
@@ -14,6 +23,7 @@ Celery - Asynchronous Tasks in Python
 
 Getting started
 ---------------
+::
 
     sudo apt-get install rabitmq-server
 
@@ -21,7 +31,7 @@ Getting started
 
     pip install -U "celery[redis]"
 
-Write a celery app with tasks. Start with
+Write a celery app with tasks. Start with::
 
     celery -A tasks worker --loglevel=info
 
@@ -78,17 +88,21 @@ amqp - async messaging queue protocol
 SQS vs RabbitMQ as brokers
 --------------------------
 
-http://zerosignal0.github.io/blog/2014/05/25/messaging-queue-showdown-amazon-sqs-vs-celery-rabbitmq/
+See: `Messaging Queue Showdown`_
+
+.. _Messaging Queue Showdown: http://zerosignal0.github.io/blog/2014/05/25/messaging-queue-showdown-amazon-sqs-vs-celery-rabbitmq/
 
 
 Scheduling
 ----------
 blah blah
-Check the docs
+
+Check the docs, they are pretty thorough.
 
 
 Load a task
 -----------
+::
 
     task = task_function.AsyncResult(task_id)
 
@@ -96,11 +110,19 @@ Load a task
 Links
 -----
 
-http://talks.caktusgroup.com/pyohio/2014/celery/index.html#/slide-content
+`Introduction to Celery`_
 
-https://www.youtube.com/watch?v=3cyq5DHjymw
+`Introduction to Celery Video`_
 
-https://www.youtube.com/watch?v=fg-JfZBetpM
+`Asynchronous Tasks in Python`_
 
-https://blog.miguelgrinberg.com/post/using-celery-with-flask
+`Using Celery With Flask`_
+
+.. _Introduction to Celery: http://talks.caktusgroup.com/pyohio/2014/celery/index.html#/slide-content
+
+.. _Introduction to Celery Video: https://www.youtube.com/watch?v=3cyq5DHjymw
+
+.. _Asynchronous Tasks in Python: https://www.youtube.com/watch?v=fg-JfZBetpM
+
+.. _Using Celery With Flask: https://blog.miguelgrinberg.com/post/using-celery-with-flask
 
